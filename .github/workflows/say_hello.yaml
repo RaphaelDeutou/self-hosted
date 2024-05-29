@@ -1,0 +1,17 @@
+name: hello
+on: 
+  push:
+jobs:
+  name: "reusableWorkflowCallJob"
+  test-application:
+  runs-on: ['self-hosted', 'Linux', 'X64']
+  steps:
+    - name: "checkout source code"
+      uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: "say hello"
+      run: echo "Hello from the runner!"
