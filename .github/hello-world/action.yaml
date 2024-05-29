@@ -1,0 +1,13 @@
+name: self-runnig
+on:
+  push:
+jobs:
+  
+  name: "Say hello"
+  description: "Say hello to someone/something"
+  runs:
+    using: composite
+    steps:
+      - name: "Say hello"
+        run: echo "Hello from the runner"
+        shell: bash
